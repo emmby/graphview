@@ -61,6 +61,11 @@ class FruchtermanReingoldAlgorithm implements Algorithm {
 
       // double newDX = newPosition.dx;
       // double newDY = newPosition.dy;
+
+      // hack for https://github.com/nabil6391/graphview/issues/111
+      if (newDX.toInt() == 0) newDX = graphWidth / 2;
+      if (newDY.toInt() == 0) newDY = graphHeight / 2;
+
       node.position = Offset(newDX, newDY);
     });
   }
